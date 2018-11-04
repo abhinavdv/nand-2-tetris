@@ -1,0 +1,67 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux16.hdl
+
+/**
+ * 16-bit multiplexor: 
+ * for i = 0..15 out[i] = a[i] if sel == 0 
+ *                        b[i] if sel == 1
+ */
+
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+	Not(in=sel[0],out=out0);	
+	And(a=a[0],b=out0,out=out10]);
+	And(a=a[1],b=out0,out=out11]);
+	And(a=a[2],b=out0,out=out12]);
+	And(a=a[3],b=out0,out=out13]);
+	And(a=a[4],b=out0,out=out14]);
+	And(a=a[5],b=out0,out=out15]);
+	And(a=a[6],b=out0,out=out16]);
+	And(a=a[7],b=out0,out=out17]);
+	And(a=a[8],b=out0,out=out18]);
+	And(a=a[9],b=out0,out=out19]);
+	And(a=a[10],b=out0,out=out110]);
+	And(a=a[11],b=out0,out=out111]);
+	And(a=a[12],b=out0,out=out112]);
+	And(a=a[13],b=out0,out=out113]);
+	And(a=a[14],b=out0,out=out114]);
+	And(a=a[15],b=out0,out=out115]);
+	And(a=b[0],b=sel,out=out20]);
+	And(a=b[1],b=sel,out=out21]);
+	And(a=b[2],b=sel,out=out22]);
+	And(a=b[3],b=sel,out=out23]);
+	And(a=b[4],b=sel,out=out24]);
+	And(a=b[5],b=sel,out=out25]);
+	And(a=b[6],b=sel,out=out26]);
+	And(a=b[7],b=sel,out=out27]);
+	And(a=b[8],b=sel,out=out28]);
+	And(a=b[9],b=sel,out=out29]);
+	And(a=b[10],b=sel,out=out210]);
+	And(a=b[11],b=sel,out=out211]);
+	And(a=b[12],b=sel,out=out212]);
+	And(a=b[13],b=sel,out=out213]);
+	And(a=b[14],b=sel,out=out214]);
+	And(a=b[15],b=sel,out=out215]);
+	Or(a=out10],b=out20],out=out[0]);
+	Or(a=out11],b=out21],out=out[1]);
+	Or(a=out12],b=out22],out=out[2]);
+	Or(a=out13],b=out23],out=out[3]);
+	Or(a=out14],b=out24],out=out[4]);
+	Or(a=out15],b=out25],out=out[5]);
+	Or(a=out16],b=out26],out=out[6]);
+	Or(a=out17],b=out27],out=out[7]);
+	Or(a=out18],b=out28],out=out[8]);
+	Or(a=out19],b=out29],out=out[9]);
+	Or(a=out110],b=out210],out=out[10]);
+	Or(a=out111],b=out211],out=out[11]);
+	Or(a=out112],b=out212],out=out[12]);
+	Or(a=out113],b=out213],out=out[13]);
+	Or(a=out114],b=out214],out=out[14]);
+	Or(a=out115],b=out215],out=out[15]);
+}
+
